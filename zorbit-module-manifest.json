@@ -1,0 +1,75 @@
+{
+  "moduleId": "zorbit-app-help_support",
+  "moduleName": "Help & Support",
+  "moduleType": "app",
+  "version": "0.1.0",
+  "description": "Help & Support center scaffold — placeholder module that surfaces the Support Center scaffold (L1) in the sidebar. Coming Soon: tickets, knowledge base, community forum, video tutorials.",
+  "owner": "OneZippy.ai",
+  "icon": "support_agent",
+  "color": "#0ea5e9",
+  "placement": {
+    "scaffold": "support_center",
+    "scaffoldSortOrder": 50,
+    "capabilityArea": "submit_a_ticket",
+    "sortOrder": 100
+  },
+  "registration": {
+    "kafkaTopic": "platform-module-announcements",
+    "manifestUrl": "https://zorbit-dev.onezippy.ai/api/help_support/api/v1/G/manifest"
+  },
+  "guide": {
+    "intro": {
+      "headline": "Help & Support",
+      "summary": "Coming Soon: ticketing, knowledge base, community forum, video tutorials.",
+      "feRoute": "/m/help_support/guide/intro"
+    },
+    "pricing": {
+      "feRoute": "/m/help_support/guide/pricing",
+      "status": "coming-soon"
+    }
+  },
+  "navigation": {
+    "sections": [
+      {
+        "id": "guide",
+        "label": "Guide",
+        "sortOrder": 0,
+        "icon": "menu_book",
+        "items": [
+          {
+            "label": "Intro",
+            "feRoute": "/m/help_support/guide/intro",
+            "icon": "BookOpen",
+            "feComponent": "@platform:GuideIntroView",
+            "sortOrder": 1
+          },
+          {
+            "label": "Pricing",
+            "feRoute": "/m/help_support/guide/pricing",
+            "icon": "DollarSign",
+            "feComponent": "@platform:GuidePricing",
+            "sortOrder": 5
+          }
+        ]
+      }
+    ]
+  },
+  "apiRoutes": [
+    {
+      "method": "GET",
+      "path": "/api/help_support/api/v1/G/health",
+      "privilege": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/help_support/api/v1/G/manifest",
+      "privilege": null
+    }
+  ],
+  "events": {
+    "consumes": [],
+    "publishes": []
+  },
+  "schemaVersion": 2,
+  "_status": "scaffold-only — Coming Soon module to populate Support Center L1 scaffold"
+}
