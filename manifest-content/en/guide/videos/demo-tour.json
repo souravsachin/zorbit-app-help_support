@@ -1,0 +1,11 @@
+{
+  "entries": [
+    {
+      "title": "help_support demo",
+      "src": "/static/videos/help_support/demo.mp4",
+      "playerType": "tour",
+      "captions": "/static/videos/help_support/demo.vtt",
+      "duration": 60
+    }
+  ]
+}

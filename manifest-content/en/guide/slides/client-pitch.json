@@ -1,0 +1,13 @@
+{
+  "deck": [
+    {
+      "title": "help support overview",
+      "body": "Help & Support center scaffold — placeholder module that surfaces the Support Center scaffold (L1) in the sidebar. Coming Soon: tickets, knowledge base, community forum, video tutorials.",
+      "narration": {
+        "audioSrc": "./audio/client-pitch/0.mp3",
+        "text": "Help & Support center scaffold — placeholder module that surfaces the Support Center scaffold (L1) in the sidebar. Coming Soon: tickets, knowledge base, community forum, video tutorials.",
+        "duration": 10
+      }
+    }
+  ]
+}

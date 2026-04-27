@@ -1,75 +1,105 @@
 {
+  "manifestVersion": "2.0",
   "moduleId": "zorbit-app-help_support",
-  "moduleName": "Help & Support",
   "moduleType": "app",
   "version": "0.1.0",
-  "description": "Help & Support center scaffold — placeholder module that surfaces the Support Center scaffold (L1) in the sidebar. Coming Soon: tickets, knowledge base, community forum, video tutorials.",
-  "owner": "OneZippy.ai",
-  "icon": "support_agent",
-  "color": "#0ea5e9",
   "placement": {
-    "scaffold": "support_center",
-    "scaffoldSortOrder": 50,
-    "capabilityArea": "submit_a_ticket",
-    "sortOrder": 100
+    "scaffold": "developer_center",
+    "scaffoldSortOrder": 70,
+    "capabilityArea": "help_support",
+    "sortOrder": 10
   },
   "registration": {
-    "kafkaTopic": "platform-module-announcements",
-    "manifestUrl": "https://zorbit-dev.onezippy.ai/api/help_support/api/v1/G/manifest"
-  },
-  "guide": {
-    "intro": {
-      "headline": "Help & Support",
-      "summary": "Coming Soon: ticketing, knowledge base, community forum, video tutorials.",
-      "feRoute": "/m/help_support/guide/intro"
-    },
-    "pricing": {
-      "feRoute": "/m/help_support/guide/pricing",
-      "status": "coming-soon"
-    }
+    "kafkaTopic": "platform-module-announcements"
   },
   "navigation": {
     "sections": [
       {
         "id": "guide",
-        "label": "Guide",
         "sortOrder": 0,
-        "icon": "menu_book",
         "items": [
           {
-            "label": "Intro",
+            "id": "intro",
+            "sortOrder": 1,
             "feRoute": "/m/help_support/guide/intro",
-            "icon": "BookOpen",
-            "feComponent": "@platform:GuideIntroView",
-            "sortOrder": 1
+            "feComponent": "@platform:GuideIntroView"
           },
           {
-            "label": "Pricing",
+            "id": "presentation",
+            "sortOrder": 2,
+            "feRoute": "/m/help_support/guide/presentation",
+            "feComponent": "@platform:GuideSlideDeck"
+          },
+          {
+            "id": "lifecycle",
+            "sortOrder": 3,
+            "feRoute": "/m/help_support/guide/lifecycle",
+            "feComponent": "@platform:GuideLifecycle"
+          },
+          {
+            "id": "videos",
+            "sortOrder": 4,
+            "feRoute": "/m/help_support/guide/videos",
+            "feComponent": "@platform:GuideVideos"
+          },
+          {
+            "id": "resources",
+            "sortOrder": 5,
+            "feRoute": "/m/help_support/guide/resources",
+            "feComponent": "@platform:GuideResources"
+          },
+          {
+            "id": "pricing",
+            "sortOrder": 6,
             "feRoute": "/m/help_support/guide/pricing",
-            "icon": "DollarSign",
-            "feComponent": "@platform:GuidePricing",
-            "sortOrder": 5
+            "feComponent": "@platform:GuidePricing"
           }
         ]
       }
     ]
   },
-  "apiRoutes": [
-    {
-      "method": "GET",
-      "path": "/api/help_support/api/v1/G/health",
-      "privilege": null
+  "guide": {
+    "intro": {
+      "$src": "./manifest-content/guide/intro.md"
     },
-    {
-      "method": "GET",
-      "path": "/api/help_support/api/v1/G/manifest",
-      "privilege": null
+    "slides": {
+      "decks": {
+        "$src": "./manifest-content/guide/slides/index.json"
+      }
+    },
+    "lifecycle": {
+      "$src": "./manifest-content/guide/lifecycle.json"
+    },
+    "videos": {
+      "playlists": {
+        "$src": "./manifest-content/guide/videos/index.json"
+      }
+    },
+    "resources": {
+      "$src": "./manifest-content/guide/resources.json"
+    },
+    "pricing": {
+      "$src": "./manifest-content/guide/pricing.json"
     }
-  ],
-  "events": {
-    "consumes": [],
-    "publishes": []
   },
-  "schemaVersion": 2,
-  "_status": "scaffold-only — Coming Soon module to populate Support Center L1 scaffold"
+  "deployments": {
+    "show": true,
+    "health": {
+      "beRoute": "/api/help_support/api/v1/G/health"
+    }
+  },
+  "backend": {
+    "baseUrl": "http://localhost:3100",
+    "apiPrefix": "/api/help_support/api/v1"
+  },
+  "events": {
+    "publishes": [],
+    "subscribes": []
+  },
+  "errors": {
+    "$src": "./manifest-content/errors.json"
+  },
+  "dependencies": [
+    "zorbit-cor-event_bus"
+  ]
 }

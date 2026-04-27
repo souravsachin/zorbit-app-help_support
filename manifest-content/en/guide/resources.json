@@ -1,0 +1,9 @@
+{
+  "links": [
+    {
+      "label": "help_support OpenAPI",
+      "href": "/api/help_support/api/v1/G/openapi.json",
+      "kind": "api"
+    }
+  ]
+}

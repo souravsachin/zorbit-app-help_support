@@ -1,0 +1,10 @@
+{
+  "HELP_S_NOT_FOUND": {
+    "message": "Resource not found.",
+    "remedy": "Check the ID."
+  },
+  "HELP_S_UNAUTHORIZED": {
+    "message": "Insufficient privileges.",
+    "remedy": "Ask a super admin."
+  }
+}
